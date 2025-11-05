@@ -1,3 +1,4 @@
+const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/onlineShop";
 document.addEventListener("DOMContentLoaded", () => {
 
   // Variables necesarias para controles de menús y desplazamiento básico
@@ -58,6 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Evento para hacer click en el logo y volver a inicio
   logos.forEach(logo => {
-    logo.addEventListener('click', ()=> window.location="../index.html");
+    logo.addEventListener('click', ()=> location.href = `..${BASE_URL}/index.html`);
   });
 });
