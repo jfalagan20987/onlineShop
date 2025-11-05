@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdowns = document.querySelectorAll(".dropdown");
   const arrowups = document.querySelectorAll(".arrowup");
   const footer = document.querySelector("footer");
-  const logo = document.querySelector(".logo");
+  const logos = document.querySelectorAll('.logo');
 
   // Control de la versión de dropdown y arrowup que he necesitado copiar y pegar porque no era capaz de hacerlo
   // EXPLICACIÓN DE ERROR PENDIENTE DE SOLUCIONAR
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdowns.forEach(drop => drop.addEventListener("click", () => toggleSubmenu(true)));
   arrowups.forEach(arrow => arrow.addEventListener("click", () => toggleSubmenu(false)));
 
-  // Evento para que al hacer click en el logo, volvamos a la página de inicio
-  logo.addEventListener("click", () => {
-    location.href = "../index.html";
+  // Evento para hacer click en el logo y volver a inicio
+  logos.forEach(logo => {
+    logo.addEventListener('click', ()=> window.location="../index.html");
   });
 });

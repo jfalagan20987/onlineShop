@@ -168,7 +168,7 @@ header div, footer div{
 .user p{
     display: none;
     font-weight: bold;
-    color: var(--poppy);
+    color: var(--onyx);
 }
 
 main{
@@ -362,10 +362,12 @@ footer div img{
     }
 
 
+    /* Hacemos que categories sea relativo para poder desplegar el submenú debajo */
     #nav-header ul li {
         position: relative;
     }
 
+    /* Cómo aparece el submenú al hacer click en el icono de dropdown */
     #nav-header ul li .submenu {
         display: none;
         position: absolute;
