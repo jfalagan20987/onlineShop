@@ -171,10 +171,6 @@ img[alt="producto-3-2"], img[alt="producto-1-1"]{
   cursor: pointer;
 }
 
-.extra-tablet-pc{
-  display: none;
-}
-
 .filters{
   display: none;
 }
@@ -505,10 +501,6 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     .destacados img[alt="producto-1-1"]{
-      display: initial;
-    }
-
-    .extra-tablet-pc{
       display: initial;
     }
 

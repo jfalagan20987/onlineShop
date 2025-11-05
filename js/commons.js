@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Variables necesarias para controles de menús y desplazamiento básico
   const btnMenu = document.querySelector("#btn-menu");
   const navHeader = document.querySelector("#nav-header");
   const btnClose = document.querySelector("#btn-close img");
@@ -8,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector("footer");
   const logo = document.querySelector(".logo");
 
+  // Control de la versión de dropdown y arrowup que he necesitado copiar y pegar porque no era capaz de hacerlo
+  // EXPLICACIÓN DE ERROR PENDIENTE DE SOLUCIONAR
+  // Tiene un pequeño error que no consigo solucionar: al abrir el submenú en Tablet o Mobile, cuando amplío para pasar a Desktop, el dropdown aparece inicialmente en white en Desktop
+  // Una vez se hace click en Desktop, vuelve a aparecer en versión onyx, que es como debería aparecer
+  // También aparece correctamente si se abre la página directamente en Desktop
   const currentVariant = () =>
     window.matchMedia("(min-width: 1025px)").matches ? "onyx" : "white";
 
@@ -28,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const resetSubmenu = () => toggleSubmenu(false);
 
+
+  // Control del nav del header
   btnMenu.addEventListener("click", () => {
     navHeader.classList.add("nav-visible");
     document.body.classList.add("no-scroll");
@@ -42,9 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
     resetSubmenu();
   });
 
+
+  // Eventos para las img dropdowns y arrowups, ya que al tener más de una con la misma clase, deben tratarse como arrays
   dropdowns.forEach(drop => drop.addEventListener("click", () => toggleSubmenu(true)));
   arrowups.forEach(arrow => arrow.addEventListener("click", () => toggleSubmenu(false)));
 
+  // Evento para que al hacer click en el logo, volvamos a la página de inicio
   logo.addEventListener("click", () => {
     location.href = "../index.html";
   });

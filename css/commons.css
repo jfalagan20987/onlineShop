@@ -26,6 +26,7 @@
     font-family: Roboto;
 }
 
+/* Los títulos irán en Alexandria */
 h3, h4{
     font-family: Alexandria;
 }
@@ -34,6 +35,7 @@ body{
     height: 100vh;
 }
 
+/* Estilo común de header y footer */
 header, footer{
     background-color: var(--french-gray);
     color: var(--anti-flash-white);
@@ -45,12 +47,14 @@ header, footer{
     position: relative;
 }
 
+/* El header debe permanecer siempre en pantalla */
 header{
     position: sticky;
     top: 0;
     z-index: 3;
 }
 
+/* Ocultamos el nav para Mobile y Tablet */
 header nav {
   display: none;
   position: fixed;
@@ -123,6 +127,7 @@ header nav {
   display: flex;
 }
 
+/* Clase que se añade al nav para que, cuando se despliegue, no exista scroll de fondo y aparezca el footer immediatamente debajo*/
 .no-scroll {
   overflow: hidden;
 }
@@ -159,6 +164,7 @@ header div, footer div{
     align-items: center;
 }
 
+/* El "Hello, username" debe estar oculto en Mobile*/
 .user p{
     display: none;
     font-weight: bold;
@@ -171,10 +177,12 @@ main{
     /* height: calc(100vH - 130px);*/
 }
 
+/* Ocultamos el buscador del header que solo queremos para Desktop */
 header .buscador{
     display: none;
 }
 
+/* Buscador del main para Mobile y Tablet*/
 main .buscador{
     display: flex;
     align-items: center;
@@ -254,6 +262,8 @@ footer div img{
 
 /*TABLET*/
 @media (min-width: 577px){
+
+    /* Intercambio de logos */
     header img[alt="logo-small"]{
         display: none;
     }
@@ -264,6 +274,7 @@ footer div img{
         margin: 0 auto;
     }
 
+    /* Aparece el "Hello, username" */
     .user p{
         display: initial;
     }
@@ -277,10 +288,12 @@ footer div img{
 /*DESKTOP*/
 @media(min-width: 1025px){
 
+    /* Ajustamos tamaño del header para incluir el nav */
     header{
         height: 120px;
     }
 
+    /* Intercambio de logos */
     header img[alt="logo-long"]{
         display: none;
     }
@@ -295,6 +308,7 @@ footer div img{
         display: none;
     }
 
+    /* Intercambio de dropdown y arrowup */
     .dropdown[data-variant="white"], .arrowup[data-variant="white"] {
         display: none;
     }
@@ -378,6 +392,4 @@ footer div img{
     #nav-header ul li .submenu li a:hover {
         color: var(--poppy);
     }
-
-
 }

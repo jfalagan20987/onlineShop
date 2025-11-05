@@ -8,23 +8,31 @@
     <title>Shift & Go</title>
 </head>
 <body>
+    <!--Header con el logo en tres formatos distintos que se usarán según conveniencia-->
     <header>
         <img id="btn-menu" src="./assets/icons/menu_burger.png" alt="menu-burger">
         <img class="logo" src="./assets/logos/logo_small_shift_and_go.png" alt="logo-small">
         <img class="logo" src="./assets/logos/logo_long_shift_and_go.png" alt="logo-long">
         <img class="logo" src="./assets/logos/logo_shift_and_go.png" alt="logo">
+
+        <!--nav que será un desplegable en Mobile y Tablet, pero que estará fijo en Desktop-->
         <nav id="nav-header">
             <div id="btn-close">
                 <img src="./assets/icons/close_menu.png" alt="close-menu">
             </div>
+            <!--Buscador de la versión Desktop, que debe encontrarse dentro del header a diferencia de las versiones Mobile y Tablet-->
             <div class="buscador">
                 <input type="search" name="search" placeholder="Search products..." autocomplete="off">
             </div>
+
+            <!--Contenido del nav-->
             <ul>
                 <li><a id="index" href="./index.html">Home</a></li>
                 <li>
                     <div>
                         <a id="categories" href="#">Categories</a>
+
+                        <!--Iconos para controlar el submenu en dos colores distintos que controlaremos con data-variant en JavaScript-->
                         <img src="./assets/icons/dropdown.svg" alt="dropdown" class="dropdown" data-variant="white">
                         <img src="./assets/icons/arrowup.svg" alt="arrowup" class="arrowup" data-variant="white">
 
@@ -49,6 +57,7 @@
         <div>
             <div class="user">
                 <img src="./assets/icons/user.png" alt="user">
+                <!--Este texto, por cuestiones de espacio, solo se mostrará en Tablet y Desktop-->
                 <p>Hello, username</p>
             </div>
             <img src="./assets/icons/shopping_cart.png" alt="shopping-cart">
@@ -59,8 +68,12 @@
     <main>
         
         <div class="container">
+
+            <!--Aside que será fijo en Desktop, pero que se transformará en un popup para Mobile y Tablet-->
             <aside class="filters">
                 <form action="#">
+
+                    <!--Selector múltiple de categorías mediante checkbox-->
                     <section class="filter">
                         <h3>Brands</h3>
                         <ul>
@@ -75,6 +88,7 @@
                         </ul>
                     </section>
                     
+                    <!--Selector múltiple de colores (todavia no tengo claro cómo puedo hacer funcionarlo dentro del form para conectar con la base de datos)-->
                     <section class="filter">
                         <h3>Colors</h3>
                         <div class="colors">
@@ -91,6 +105,7 @@
                         </div>
                     </section>
                     
+                    <!--Un rango de precio donde, en el futuro, debería incluir que tenga dos botones para fijar mínimo y máximo (todavía no sé cómo hacerlo)-->
                     <section class="filter">
                         <h3>Price range</h3>
                         <input type="range" min="0" max="300" step="5">
@@ -102,17 +117,25 @@
                             <li>100€ or more</li>
                         </ul>
                     </section>
+
+                    <!--El submit del form que solo aparece cuando está en formato popup. Mi idea es que en Desktop se actualice cada vez que el usuario modifique un filtro-->
                     <input type="submit" value="SEARCH">
                 </form>
             </aside>
             
+            <!--Productos-->
             <div class="products-container">
+
+                <!--Buscador para Mobile y Tablet, que debe aparecer en el main y con un botón para desplegar el popup de los filtros-->
                 <div class="buscador">
                     <input type="search" name="search" placeholder="Search products..." autocomplete="off">
                     <img src="./assets/icons/filter.svg" alt="filter">
                 </div>
+
+                <!--Sección destacados donde, en principio, la idea es que aparezcan descuentos de productos destacados-->
                 <section class="destacados">
                     <div>
+                        <!--Para la sección destacados vamos alternando con imágenes 3:2 (Mobile) y 1:1 (Tablet y Desktop)-->
                         <div>
                             <img src="./assets/img/shoes/shai001_3-2.jpg" alt="producto-3-2">
                             <img src="./assets/img/shoes/shai001_1-1.jpg" alt="producto-1-1">
@@ -120,10 +143,13 @@
                         </div>
                         <h3>SHAI 001</h3>
                         <div>
+                            <!--Botones de comprar ya y añadir al carrito-->
                             <div class="buy-cart">
                                 <button class="buy-now">BUY NOW</button>
                                 <button class="add-to-cart"><img src="./assets/icons/shopping_cart.png" alt="shopping-cart"></button>
                             </div>
+
+                            <!--Precio original y precio actual-->
                             <div class="preu">
                                 <p>149.99€</p>
                                 <h3>129.99€</h3>
@@ -150,7 +176,7 @@
                         </div>
                     </div>
         
-                    <div class="extra-tablet-desktop">
+                    <div>
                         <div>
                             <img src="./assets/img/shoes/kd-18_3-2.jpg" alt="producto-3-2">
                             <img src="./assets/img/shoes/kd-18_1-1.jpg" alt="producto-1-1">
@@ -169,7 +195,7 @@
                         </div>
                     </div>
         
-                    <div class="extra-tablet-desktop">
+                    <div>
                         <div>
                             <img src="./assets/img/shoes/lebron-9_3-2.jpg" alt="producto-3-2">
                             <img src="./assets/img/shoes/lebron-9_1-1.jpg" alt="producto-1-1">
@@ -407,6 +433,7 @@
         </div>
     </main>
 
+    <!--Footer, donde siempre se usaará el logo principal-->
     <footer>
         <img src="./assets/logos/logo_shift_and_go.png" alt="logo">
         <div>
